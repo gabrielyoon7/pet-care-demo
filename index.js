@@ -25,15 +25,14 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/bootstrap', function(req, res){
-    res.sendFile(__dirname + '/src/bootstrap/bootstrap.html');
+// 이 페이지 수정 시 서버를 껐다 켜야 합니다.
+// 이게 싫으면 nodemon 설치해서 hot reloading 기능을 사용하세요
+
+app.get('/home', function(req, res){
+    res.sendFile(__dirname + '/src/home.html');
 });
 
-app.get('/jquery', function(req, res){
-    res.sendFile(__dirname + '/src/jquery/jquery.html');
-});
-
-app.get('/react', function(req, res){
-    res.sendFile(__dirname + '/src/react/react.html');
+app.get('/test', function(req, res){
+    res.sendFile(__dirname + '/src/test/test.html');
 });
 
