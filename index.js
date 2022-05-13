@@ -29,10 +29,10 @@ app.get('/', function(req, res){
 // 이게 싫으면 nodemon 설치해서 hot reloading 기능을 사용하세요
 
 app.get('/home', function(req, res){
-    res.sendFile(__dirname + '/src/home.html');
+    res.sendFile(__dirname + '/src/page/home.html');
 });
 
 app.get('/test', function(req, res){
-    res.sendFile(__dirname + '/src/test/test.html');
+    res.sendFile(__dirname + '/src/page/test/test.html');
 });
 
