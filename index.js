@@ -32,6 +32,14 @@ app.get('/home', function(req, res){
     res.sendFile(__dirname + '/src/page/home.html');
 });
 
+app.get('/my-page', function(req, res){
+    res.sendFile(__dirname + '/src/page/common/my-page.html');
+});
+
+app.get('/notification', function(req, res){
+    res.sendFile(__dirname + '/src/page/common/notification.html');
+});
+
 app.get('/test', function(req, res){
     res.sendFile(__dirname + '/src/page/test/test.html');
 });
