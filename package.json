@@ -1,0 +1,23 @@
+{
+  "name": "pet-care-demo",
+  "version": "1.0.0",
+  "description": "KGU 2022-1 기초캡스톤 펫케어",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielyoon7/pet-care-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielyoon7/pet-care-demo/issues"
+  },
+  "homepage": "https://github.com/gabrielyoon7/pet-care-demo#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "open": "^8.4.0"
+  }
+}
