@@ -10,10 +10,17 @@ console.log(' \\____/ \\__,_||_.__/ |_|   |_| \\___||_|   \\_/   \\___/  \\___/ 
 
 //8080포트가 아닌 다른 포트를 원하는 경우 여기에서 수정
 app.listen(8080,function(){
+    console.log()
     console.log('listening on 8080');
     const open = require('open');
     open('http://localhost:8080');
-    console.log('http://localhost:8080 페이지를 자동으로 열었습니다.')
+    console.log('기본 브라우저를 사용하여 http://localhost:8080 페이지를 자동으로 열었습니다.')
+    let ip = require("ip");
+    console.log()
+    console.dir('현재 사용중인 내부 ip로 접속하는 방법은 다음과 같습니다...');
+    console.log ('http://'+ip.address()+':8080' );
+    console.dir('네트워크 설정이 기본 값이라면 동일 공유기 내의 다른 디바이스로도 위 주소로 접속이 가능합니다.');
+    console.log()
     console.log('(서버의 hot reloading을 원하시면 nodemon index.js로 실행해주세요)')
 });
 

@@ -4,6 +4,7 @@
   "description": "KGU 2022-1 기초캡스톤 펫케어",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/gabrielyoon7/pet-care-demo#readme",
   "dependencies": {
     "express": "^4.18.1",
+    "ip": "^1.1.8",
     "open": "^8.4.0"
   }
 }
