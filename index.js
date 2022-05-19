@@ -72,3 +72,7 @@ app.get("/test", function (req, res) {
 app.get("/voice", function (req, res) {
   res.sendFile(__dirname + "/src/page/pet-care/voiceRecognition.html");
 });
+
+app.get("/water", function (req, res) {
+  res.sendFile(__dirname + "/src/page/auto-feed/auto-water.html");
+});
