@@ -1,16 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 메인 페이지 -->
 
-    <!-- Bootstrap CSS -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="/theme/js/main.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/theme/css/style.css">
+    <style>
+      .content{
+        width:50%;
+        margin: 10px auto;
+      }
+      .temperature {
+        border: 1px solid gray;
+        float: left;
+        background-color: white;
+        height: 250px;
+        width: 250px;
+      }
+      .ml {
+        border: 1px solid gray;
+        float: right;
+        background-color: white;
+        height: 250px;
+        width: 250px;
+      }
+      .btn-img {
+        width: 200px;
+        height: 200px;
+        border: none;
+        background: white;
+      }
+      button {
+        background:transparent;
+      }
+    </style>
+    <title>Auto-Water</title>
+</head>
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    
-  </body>
+<body>
+    <div class="text-center">
+        <div class="container-mobile">
+            <div class="bg-white sticky-top">
+                <!-- 상태바 시작-->
+                <div class="d-flex justify-content-between pt-2 px-4" id="status-bar">
+                    <div><b>12:00</b></div>
+                    <div>
+                        <i class="bi bi-bluetooth"></i>
+                        <i class="bi bi-bar-chart-fill"></i>
+                        <i class="bi bi-wifi"></i>
+                        <i class="bi bi-battery-full"></i>
+                    </div>
+                </div>
+                <!-- 상태바 끝-->
+                <!-- 상단바 시작-->
+                <div class="border-bottom d-flex justify-content-between pt-3 px-2">
+                    <div class="my-2">
+                        <button class="btn btn-default" type="button" onclick="location.href='../my-page' ">
+                          <h2 class="m-0"><i class="bi bi-list"></i></h2>
+                        </button>
+                    </div>
+                    <div class="my-2 py-3">
+                        <h1><b>자동 급수 설정</b></h1>
+                    </div>
+                    <div class="my-2">
+                        <button class="btn btn-default" type="button" onclick="location.href='../notification' ">
+                          <h2 class="m-0"><i class="bi bi-bell-fill"></i></h2>
+                        </button>
+                    </div>
+                </div>
+                <!-- 상단바 끝 -->
+            </div>
+            <div style="padding: 15px 0px 15px 0px;"></div>
+            <div id="main-content" class="px-4 pb-5">
+                <div id="home-center">
+                  <p>우리 사랑스러운 아이가 물을 마실 수 있도록 도와요</p>
+                  <div class="content">
+                    <div style="padding: 15px 0px 15px 0px;"></div>
+                    <div class="temperature"><button type="button" style="border:none;"><img class="btn-img" src="data:image/png;base64,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"></button><label for="T">식수 온도 조절</label></div>
+                    <div class="ml"><button type="button" style="border:none;"><img class="btn-img" src="https://cdn-icons-png.flaticon.com/512/892/892899.png"></button><label for="m">평균 마시는 양 계산</label></div>
+                  </div>
+                    <!-- 메인 컨텐츠 시작 -->
+                    <!-- 메인 컨텐츠 끝 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    setStatusBar();
+</script>
+<style>
+
+</style>
+
 </html>
