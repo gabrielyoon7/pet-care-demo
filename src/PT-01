@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media screen and (max-width: 767px) {
+            .body{
+                overflow: hidden;
+            }
+            #top_box{
+                margin: 0; padding: 0;
+                margin-left: 2.5%;
+                width: 95%;
+                height: 30px;
+                background: rgba(0, 119, 255, 0.589);
+                float: left;
+                border-radius: 3px;
+            }
+            .button{
+                float: left;
+                width: 45%;
+                margin-top: 100px;
+                margin-left: 27.5%;
+                margin-right: 10px;
+                padding-bottom: 60px;
+                padding-top: 60px;
+                text-align: center;
+                
+            }
+            #ball{
+               background-image: url('ball.jpg');
+               width: 100;
+               height: 100;
+            }
+            #razer{
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="top_box">
+        <div></div>
+    </div>
+    <div class="button" id="ball"><a href="">공 놀이기구</a></div>
+    <div class="button" id="razer"><a href="">고양이 레이저</a></div>
+</body>
+</html>
