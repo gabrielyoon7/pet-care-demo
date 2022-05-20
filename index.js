@@ -73,3 +73,6 @@ app.get("/voice", function (req, res) {
   res.sendFile(__dirname + "/src/page/pet-care/voiceRecognition.html");
 });
 
+app.get("/voice", function (req, res) {
+  res.sendFile(__dirname + "/src/PT-01");
+});
