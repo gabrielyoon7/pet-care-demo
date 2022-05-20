@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCamera</title>
+    <style>
+        * {
+            font-family: 'Roboto';
+            font-style: normal;
+        }
+        main {
+            position: relative;
+            width: 384px;
+            height: 668px;
+            background: #FFFFFF;
+
+            border: 1px solid #682525;
+            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        firstblock {
+            position: absolute;
+            width: 384px;
+            height: 121px;
+            left: 0px;
+            top: 0px;
+
+            background: #FFFFFF;
+            border-radius: 0px;
+        }
+        clock {
+            position: absolute;
+            width: 41px;
+            height: 24px;
+            left: 24px;
+            top: 8px;
+
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+
+            text-align: center;
+
+            color: #212529;
+        }
+        
+        menu {
+            position: absolute;
+            width: 130px;
+            height: 24px;
+            left: 50px;
+            top: 30px;
+
+            font-weight: 600;
+            font-size: 25px;
+            line-height: 24px;
+
+            text-align: center;
+
+            color: #212529;
+        }
+        camera-reels {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 233px;
+            top: 40px;
+        }
+        camera-reels-1 {
+            position: absolute;
+            left: 0%;
+            right: 62.5%;
+            top: 0%;
+            bottom: 62.5%;
+            border-radius: 50%;
+
+            background: #000000;
+        }
+        camera-reels-2 {
+            position: absolute;
+            left: 37.5%;
+            right: 25%;
+            top: 0%;
+            bottom: 62.5%;
+            border-radius: 50%;
+
+        background: #000000;
+        }
+        camera-reels-3 {
+            position: absolute;
+            left: 0%;
+            right: 0%;
+            top: 37.5%;
+            bottom: 0%;
+
+            background: #000000;
+        }
+        line1 {
+            position: absolute;
+            width: 384px;
+            height: 1px;
+            left: 0px;
+            top: 121px;
+
+            background: #DEE2E6;
+        }
+        div.recording {
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 250px;
+        height: 128px;
+        left: 67px;
+        top: 200px;
+
+        background: #f0f0f0;
+        border: 1px solid #682525;
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        font-weight: 600;
+            font-size: 30px;
+            line-height: 128px;
+
+            text-align: center;
+
+            color: #212529;
+        }
+        div.recording:hover {
+            background : #ffffff;
+        }
+        div.infrared-light {
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 250px;
+        height: 128px;
+        left: 67px;
+        top: 412px;
+
+        background: #f0f0f0;
+        border: 1px solid #682525;
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(4px);
+
+        font-weight: 600;
+            font-size: 30px;
+            line-height: 128px;
+
+            text-align: center;
+
+            color: #212529;
+        }
+        div.infrared-light:hover {
+            background : #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <firstblock>
+            <clock>12:00</clock>
+            <menu>펫 카메라</menu>
+            <camera-reels>
+                <camera-reels-1></camera-reels-1>
+                <camera-reels-2></camera-reels-2>
+                <camera-reels-3></camera-reels-3>
+            </camera-reels>
+            <line1></line1>
+            <div class="recording">카메라</div>
+            <div class="infrared-light">적외선 카메라</div>
+            
+        </firstblock>
+
+    </main>
+</body>
+</html>
