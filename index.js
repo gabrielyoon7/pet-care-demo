@@ -73,6 +73,10 @@ app.get("/voice", function (req, res) {
   res.sendFile(__dirname + "/src/page/pet-care/voiceRecognition.html");
 });
 
+
 app.get("/ball", function (req, res){
   res.sendFile(__dirname + "/src/page/pet-toy/ball.html")
 })
+app.get("/water", function (req, res) {
+  res.sendFile(__dirname + "/src/page/auto-feed/auto-water.html");
+});
