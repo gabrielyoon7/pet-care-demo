@@ -66,26 +66,6 @@
         </div>
     </div>
 </body>
-<script>
-    setStatusBar();
-    var element = document.getElementById("center-msg");
-    var timer;
-    var num;
-    function btnOn_click() {
-        element.innerText = "레이저를 시작합니다...";
-        num = 0;
-        clearInterval(timer);
-        timer = setInterval(function () {
-            num++;
-        }, 1000)
-    }
-    function btnOff_click() {
-        element.innerText = "운동시간 : " + num + "(초)";
-        clearInterval(timer);
-    }
-
-
-</script>
 <style>
     @media screen and (max-width: 767px) {
         .body {
