@@ -80,5 +80,5 @@ app.get("/water", function (req, res) {
   res.sendFile(__dirname + "/src/page/auto-feed/auto-water.html");
 });
 app.get("/camera", function (req, res) {
-  res.sendFile(__dirname + "/src/page/home.html");
+  res.sendFile(__dirname + "/src/page/pet-care/Pet-camera.html");
 });
