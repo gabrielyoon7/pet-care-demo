@@ -73,9 +73,9 @@ app.get("/voice", function (req, res) {
   res.sendFile(__dirname + "/src/page/pet-care/voiceRecognition.html");
 });
 
-app.get("/ball", function (req, res){
-  res.sendFile(__dirname + "/src/page/pet-toy/ball.html")
-})
+app.get("/ball", function (req, res) {
+  res.sendFile(__dirname + "/src/page/pet-toy/ball.html");
+});
 app.get("/water", function (req, res) {
   res.sendFile(__dirname + "/src/page/auto-feed/auto-water.html");
 });
@@ -88,6 +88,18 @@ app.get("/pet-toy-mainpage", function (req, res) {
   res.sendFile(__dirname + "/src/page/pet-toy/pet-toy-mainpage.html");
 });
 
-app.get("/camera", function (req, res) {
+app.get("/pet-care", function (req, res) {
+  res.sendFile(__dirname + "/src/page/pet-care/pet-care-mainpage.html");
+});
+
+app.get("/pet-care/sound", function (req, res) {
+  res.sendFile(__dirname + "/src/page/pet-care/voiceRecognition.html");
+});
+
+app.get("/pet-care/camera", function (req, res) {
   res.sendFile(__dirname + "/src/page/pet-care/Pet-camera.html");
 });
+
+// app.get("/camera", function (req, res) {
+//   res.sendFile(__dirname + "/src/page/pet-care/Pet-camera.html");
+// });
