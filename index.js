@@ -83,7 +83,11 @@ app.get("/water", function (req, res) {
 app.get("/feed", function (req, res) {
   res.sendFile(__dirname + "/src/page/auto-feed/feed.html");
 });
+
 app.get("/pet-toy-mainpage", function (req, res) {
   res.sendFile(__dirname + "/src/page/pet-toy/pet-toy-mainpage.html");
 });
 
+app.get("/camera", function (req, res) {
+  res.sendFile(__dirname + "/src/page/pet-care/Pet-camera.html");
+});
