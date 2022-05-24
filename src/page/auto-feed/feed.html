@@ -12,6 +12,14 @@
     <script src="/theme/js/main.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/theme/css/style.css">
+    <!---sweet alert 이용을 위해 추가한 코드 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+         crossorigin="anonymous"
+      />
     <title>Auto-Feed</title>
     <style>
         .main_text{
@@ -20,24 +28,20 @@
         .menu{
             float: left;
             width: 50%;
-            height: 33%;
+            height: 50%;
         }
         .menu_button{
-            float: center;
+            border : 1px solid gray;
             background-color: white;
-            border-color: black;
             margin: 2%;
-            width: 80%;
-            border-radius: 5%;
+            width: 80%;     
         }
         .button_img{
             float: center;
-            width: 33%;
-            height: 33%;
+            width: 66%;
+            height: 90%;
         }
-        .button_text{
-            
-        }
+        
     </style>
 </head>
 
@@ -80,62 +84,164 @@
                     <div class="main_text">
                         <p>우리 사랑스러운 아이가 밥을 먹을 수 있도록 도와요</p>
                     </div>
-                    <div>
                         <div class="menu_wrapper">
+                            
                             <div id="remote_feed" class="menu">
-                                <button class="menu_button">
+                                <button class="menu_button" id="remote_feed_b">
                                     <img src="./img/remote.png" class="button_img">
                                     <br>
                                     <span class="button_text">사료 원격 제공</span>
                                 </button>
                             </div>
+                            
                             <div id="reserve_feed" class="menu">
-                                <button class="menu_button">
-                                    <img src="./img/reserve.png" class="button_img">
+                                <button class="menu_button" id="reserve_feed_b">
+                                    <img src="./img/reserve.png" class="button_img" id="remote_feed_b">
                                     <br>
                                     <span class="button_text">사료 제공 예약</span>
                                 </button>
                             </div>
-                        </div>
-                        <div class="menu_wrapper">
+                           
                             <div id="check_feeded" class="menu">
-                                <button class="menu_button">
+                                <button class="menu_button" id="check_feeded_b">
                                     <img src="./img/check.png" class="button_img">
                                     <br>
                                     <span class="button_text">사료 섭취 확인</span>
                                 </button>
                             </div>
+                            
                             <div id="humidity_control" class="menu">
-                                <button class="menu_button">
+                                <button class="menu_button" id="humidity_control_b">
                                     <img src="./img/humidity.png" class="button_img">
                                     <br>
                                     <span class="button_text">사료통 습도 조절</span>
                                 </button>
                             </div>
-                        </div>
-                        <div class="menu_wrapper">
+                        
                             <div id="feed_container" class="menu">
-                                <button class="menu_button">
+                                <button class="menu_button" id="feed_container_b">
                                     <img src="./img/container.jpg" class="button_img">
                                     <br>
                                     <span class="button_text">사료통 상태</span>
                                 </button>
                             </div>
+                            
                             <div id="feed_management" class="menu">
-                                <button class="menu_button">
+                                <button class="menu_button" id="feed_management_b">
                                     <img src="./img/management.png" class="button_img">
                                     <br>
                                     <span class="button_text">사료 관리</span>
                                 </button>
                             </div>
-                        </div>
 
-                    </div>
+                        </div>                            
+                    
                     <!-- 메인 컨텐츠 끝 -->
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        let feed = 60;
+        let humidity = 20;
+
+        $("#remote_feed_b").click(function () {
+            Swal.fire({
+             title: '원격으로 사료를 제공하시겠습니까?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '제공',
+            cancelButtonText: '취소',
+            }).then((result) => {
+                 if (result.isConfirmed) {
+                     const Toast = Swal.mixin({
+                     toast: true,
+                    position: 'center',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    Toast.fire({
+      icon: 'success',
+      title: '사료를 제공중입니다.'
+    })
+    setTimeout(function(){
+        Swal.fire({
+      icon: 'success',
+      title: '사료 제공 완료!',
+      text: '원격으로 사료 제공이 완료되었습니다!',
+    });
+    },3000);
+      }
+    })
+
+
+            
+    
+  });
+        
+
+        $('#reserve_feed_b').on('click', function () {
+            (async () => {
+                let { value : r_time } = await Swal.fire({
+                title: '예약 시간을 입력하세요',
+                text: '예시 : 12:55 (양식을 맞추어주세요) ',
+                input: 'text',
+                inputPlaceholder: '예약 시간'
+            })
+            if (r_time) {
+                Swal.fire(r_time+'으로 예약되었습니다!','','success');
+            }
+            else{
+                Swal.fire('예약이 취소되었습니다','','error');
+            }
+    })()
+        })
+
+        $('#check_feeded_b').on('click', function () {
+            let eat = (Math.random(2)*10)%2;
+            if(eat > 1){
+                console.log(eat);
+                Swal.fire({
+                icon: 'error',
+                title: '사료가 남아있어요',
+            });
+            }
+            else{
+                console.log(eat);
+                Swal.fire({
+                icon: 'success',
+                title: '사료를 다 먹었습니다!',
+    });
+            }
+        })
+        
+        
+        $('#humidity_control_b').on('click', function () {
+            Swal.fire('현재 습도 '+humidity+'%');
+        })
+        
+        
+        $('#feed_container_b').on('click', function () {
+            Swal.fire(
+                '남은 사료 '+feed+'%\n'
+                +'현재 습도 '+humidity+'%\n'
+                
+            ,'','success');
+        })
+        
+        
+        $('#feed_management_b').on('click', function () {
+          
+        })
+      </script>
+      
 </body>
 <script>
     setStatusBar();
