@@ -79,62 +79,109 @@
 <body>
     <div class="text-center">
         <div class="container-mobile">
-            <div id="top_box">
-                <div class="bg-white sticky-top text-center">
-                    <!-- 상태바 시작-->
-                    <div class="d-flex justify-content-between pt-2 px-4" id="status-bar">
-                        <div><b>12:00</b></div>
-                        <div>
-                            <i class="bi bi-bluetooth"></i>
-                            <i class="bi bi-bar-chart-fill"></i>
-                            <i class="bi bi-wifi"></i>
-                            <i class="bi bi-battery-full"></i>
-                        </div>
+            <div class="bg-white sticky-top">
+                <!-- 상태바 시작-->
+                <div class="d-flex justify-content-between pt-2 px-4" id="status-bar">
+                    <div><b>12:00</b></div>
+                    <div>
+                        <i class="bi bi-bluetooth"></i>
+                        <i class="bi bi-bar-chart-fill"></i>
+                        <i class="bi bi-wifi"></i>
+                        <i class="bi bi-battery-full"></i>
                     </div>
-                    <!-- 상태바 끝-->
-                    <!-- 상단바 시작-->
-                    <div class="border-bottom d-flex justify-content-between pt-3 px-2">
-                        <div class="my-2">
-                            <button class="btn btn-default" type="button" onclick="location.href='../my-page' ">
-                                <h2 class="m-0"><i class="bi bi-list"></i></h2>
-                            </button>
-                        </div>
-                        <div class="my-2 py-3">
-                            놀이기능
-                        </div>
-                        <div class="my-2">
-                            <button class="btn btn-default" type="button" onclick="location.href='../notification' ">
-                                <h2 class="m-0"><i class="bi bi-bell-fill"></i></h2>
-                            </button>
-                        </div>
-                    </div>
-                    <!-- 상단바 끝 -->
                 </div>
-                <div style="height: 400px;">
+                <!-- 상태바 끝-->
+                <!-- 상단바 시작-->
+                <div class="border-bottom d-flex justify-content-between pt-3 px-2">
+                    <div class="my-2">
+                        <button class="btn btn-default" type="button" onclick="history.back(); ">
+                            <h2 class="m-0">
+                                < </h2>
+                        </button>
+                    </div>
+                    <div class="my-2 py-3">
+                        <h5 class="m-0"><i class="bi bi-apple"></i> 놀이기능</h5>
+                    </div>
+                    <div class="my-2">
+                        <button class="btn btn-default" type="button" onclick="location.href='home'; ">
+                            <h2 class="m-0"><i class="bi bi-house"></i></h2>
+                        </button>
+                    </div>
+                </div>
+                <!-- 상단바 끝 -->
+            </div>
 
-                </div>
-                <div>
-                    <div class="button" id="button-ball" a href="">
-                        <div id="ball">
-                            <div><a><b>공 놀이기구</b></a></div>
-                        </div>
-                        <div id="ball-2">
-                            <i class="fa-solid fa-dog fa-2xl"></i>
+            <div id="main-content" class="px-4 pb-5">
+                <div id="home-center">
+                    <div class="row">
+                        <div class="col-12 p-0" id="petCare">
+                            <a class="text-decoration-none" href="#" id="care">
+                                <div class="card m-2 p-2 " style="height: 180px;">
+                                    <div style="display: flex;">
+                                        <div style="float: left; width: 66%;">
+                                            <header class="m-3">
+                                                <h2 class="text-start font1" style="color: black;">놀이기능</h2>
+                                            </header>
+                                            <main class="text-start mx-3" style="color: black;">
+                                                노라죠
+                                            </main>
+                                        </div>
+                                        <div class="m-1" style="float: left; width: 10%;"><img src="/page/dog.png"
+                                                style="width: 150px; height: 150px;"></div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                    <div class="button" id="button-razer" a href="">
-                        <div id="razer">
-                            <div><a><b>고양이 레이져</b></a></div>
-                        </div>
-                        <div id="razer-2">
-                            <i class="fa-solid fa-cat fa-2xl"></i>
+                    <div class="row">
+                        <div class="col-12 p-0" id="petCare">
+                            <a class="text-decoration-none" href="/ball" id="care">
+                                <div class="card m-2 p-2" style="height: 180px;">
+                                    <div style="display: flex;">
+                                        <div style="float: left; width: 66%;">
+                                            <header class="m-3">
+                                                <h2 class="text-start font1" style="color: black;">공 놀이기구</h2>
+                                            </header>
+                                            <main class="text-start mx-3" style="color: black;">
+                                                반려견 혼자 노는 스마트 공 놀이기구    
+                                            </main>
+                                        </div>
+                                        <div id="ball-2">
+                                            <i class="fa-solid fa-dog fa-2xl"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-12 p-0" id="petCare">
+                            <a class="text-decoration-none" href="#" id="care">
+                                <div class="card m-2 p-2" style="height: 180px;">
+                                    <div style="display: flex;">
+                                        <div style="float: left; width: 66%;">
+                                            <header class="m-3">
+                                                <h2 class="text-start font1" style="color: black;">고양이 레이져</h2>
+                                            </header>
+                                            <main class="text-start mx-3" style="color: black;">
+                                                고양이가 혼자 노는 레이져    
+                                            </main>
+                                        </div>
+                                        <div id="razer-2">
+                                            <i class="fa-solid fa-cat fa-2xl"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 메인 컨텐츠 끝 -->
                 </div>
-
             </div>
         </div>
     </div>
 </body>
-
+<script>
+    setStatusBar();
+</script>
 </html>
