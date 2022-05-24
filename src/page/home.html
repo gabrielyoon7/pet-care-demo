@@ -25,6 +25,20 @@
     />
     <link rel="stylesheet" href="/theme/css/style.css" />
     <title>메인화면</title>
+    <style>
+        @font-face {
+            font-family: 'SuseongDotum';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/SuseongDotum.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+       
+        .font1 {
+            font-family: 'SuseongDotum'
+        }
+
+        
+    </style>
   </head>
 
   <body>
@@ -53,92 +67,98 @@
                 <h2 class="m-0"><i class="bi bi-list"></i></h2>
               </button>
             </div>
-            <div id="main-content" class="px-4 pb-5">
-                <div id="home-center">
-                    <!-- 메인 컨텐츠 시작 -->
-                    <div class="row">
-                        <div class="col-6 p-0">
-                            <a class="text-decoration-none" href="http://naver.com">
-                            <div class="card m-2 square" >
-                                급식기
-                            </div>
-                            </a>
-                        </div>
-                        <div class="col-6 p-0">
-                            <div class="card m-2 square">급수기</div>
-                        </div>
+            <div class="my-2 py-3"></div>
+            <div class="my-2">
+              <button
+                class="btn btn-default"
+                type="button"
+                onclick="location.href='notification' "
+              >
+                <h2 class="m-0"><i class="bi bi-bell-fill"></i></h2>
+              </button>
+            </div>
+          </div>
+          <!-- 상단바 끝 -->
+        </div>
+        <div id="main-content" class="px-4 pb-5">
+          <div id="home-center">
+            <div class="row">
+                <div class="col-6 p-0" id="autoFeed">
+                    <a class="text-decoration-none" href='/feed'>
+                    <div class="card m-2 square" >
+                        <header class="m-3"><h2 style="color: black;" class="font1">급식기</h2></header>
+                        <main style="color: black;">우리 아이에게 사료를 주어요</main>
+                        <div><img src="/page/pet-food.png" style="width: 150px; height: 150px;"></div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 p-0">
-                            <div class="card rect21 m-2"></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6 p-0">
-                            <div class="card m-2 square"></div>
-                        </div>
-                        <div class="col-6 p-0">
-                            <div class="card m-2 square"></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4 p-0">
-                            <div class="card m-2 square"></div>
-                        </div>
-                        <div class="col-4 p-0">
-                            <div class="card m-2 square"></div>
-                        </div>
-                        <div class="col-4 p-0">
-                            <div class="card m-2 square"></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6 p-0">
-                            <div class="card m-2 square"></div>
-                        </div>
-                        <div class="col-6 p-0">
-                            <div class="card m-2 square"></div>
-                        </div>
-                    </div>
-                    <!-- 메인 컨텐츠 끝 -->
+                    </a>
                 </div>
-              </div>
-              <div class="col-6 p-0">
-                <div class="card m-2 square"></div>
-              </div>
+                <div class="col-6 p-0" id="autoWater">
+                    <a class="text-decoration-none" href='/water'>
+                        <div class="card m-2 square">
+                            <header class="m-3"><h2 style="color: black;" class="font1">급수기</h2></header>
+                            <main style="color: black;">우리 아이에게 물을 주어요</main>
+                            <div><img src="/page/hot-water.png" style="width: 150px; height: 150px;"></div>
+                        </div>
+                    </a>
+                </div>
             </div>
             <div class="row">
-              <div class="col-12 p-0">
-                <div class="card rect21 m-2"></div>
-              </div>
+                <div class="col-12 p-0" id="petCare">
+                    <a class="text-decoration-none" href="/pet-care" id="care">
+                        <div class="card m-2 p-2" style="height: 180px;">
+                            <div style="display: flex;">
+                            <div style="float: left; width: 66%;">
+                            <header class="m-3"><h2 class="text-start font1" style="color: black;">펫 돌보미</h2></header>
+                            <main class="text-start mx-3" style="color: black;">우리 아이가 잘 지내는지 확인해 보아요</main>
+                            </div>
+                            <div class="m-1" style="float: left; width: 10%;"><img src="/page/dog.png" style="width: 150px; height: 150px;"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
             <div class="row">
-              <div class="col-6 p-0">
-                <div class="card m-2 square"></div>
-              </div>
-              <div class="col-6 p-0">
-                <div class="card m-2 square"></div>
-              </div>
+                <div class="col-12 p-0" id="petToy">
+                    <a class="text-decoration-none" href="/pet-toy-mainpage">
+                        <div class="card m-2 p-2" style="height: 180px;">
+                            <div style="display: flex;">
+                                <div style="float: left; width: 66%;">
+                                    <header class="m-3"><h2 class="text-start font1" style="color: black;">펫 놀이기구</h2></header>
+                                    <main class="text-start mx-3" style="color: black;">우리 아이와 놀아주세요</main>
+                                </div>
+                                <div class="m-1" style="float: left; width: 10%;"><img src="/page/pet (1).png" style="width: 150px; height: 150px;"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col-6 p-0">
+                    <div class="card m-2 square"></div>
+                </div>
+                <div class="col-6 p-0">
+                    <div class="card m-2 square"></div>
+                </div>
             </div>
             <div class="row">
-              <div class="col-4 p-0">
-                <div class="card m-2 square"></div>
-              </div>
-              <div class="col-4 p-0">
-                <div class="card m-2 square"></div>
-              </div>
-              <div class="col-4 p-0">
-                <div class="card m-2 square"></div>
-              </div>
+                <div class="col-4 p-0">
+                    <div class="card m-2 square"></div>
+                </div>
+                <div class="col-4 p-0">
+                    <div class="card m-2 square"></div>
+                </div>
+                <div class="col-4 p-0">
+                    <div class="card m-2 square"></div>
+                </div>
             </div>
             <div class="row">
-              <div class="col-6 p-0">
-                <div class="card m-2 square"></div>
-              </div>
-              <div class="col-6 p-0">
-                <div class="card m-2 square"></div>
-              </div>
-            </div>
+                <div class="col-6 p-0">
+                    <div class="card m-2 square"></div>
+                </div>
+                <div class="col-6 p-0">
+                    <div class="card m-2 square"></div>
+                </div>
+            </div> -->
             <!-- 메인 컨텐츠 끝 -->
           </div>
         </div>

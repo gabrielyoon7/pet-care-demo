@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 메인 페이지 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="/theme/js/main.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/theme/css/style.css">
+    <title>Auto-Feed</title>
+    <style>
+        .main_text{
+            margin:1%;
+        }
+        .menu{
+            float: left;
+            width: 50%;
+            height: 33%;
+        }
+        .menu_button{
+            float: center;
+            background-color: white;
+            border-color: black;
+            margin: 2%;
+            width: 80%;
+            border-radius: 5%;
+        }
+        .button_img{
+            float: center;
+            width: 33%;
+            height: 33%;
+        }
+        .button_text{
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-center">
+        <div class="container-mobile">
+            <div class="bg-white sticky-top">
+                <!-- 상태바 시작-->
+                <div class="d-flex justify-content-between pt-2 px-4" id="status-bar">
+                    <div><b>12:00</b></div>
+                    <div>
+                        <i class="bi bi-bluetooth"></i>
+                        <i class="bi bi-bar-chart-fill"></i>
+                        <i class="bi bi-wifi"></i>
+                        <i class="bi bi-battery-full"></i>
+                    </div>
+                </div>
+                <!-- 상태바 끝-->
+                <!-- 상단바 시작-->
+                <div class="border-bottom d-flex justify-content-between pt-3 px-2">
+                    <div class="my-2">
+                        <button class="btn btn-default" type="button" onclick="location.href='../my-page' ">
+                          <h2 class="m-0"><i class="bi bi-list"></i></h2>
+                        </button>
+                    </div>
+                    <div class="my-2 py-3">
+                        <h1><b>자동 급식기</b></h1>
+                    </div>
+                    <div class="my-2">
+                        <button class="btn btn-default" type="button" onclick="location.href='../notification' ">
+                          <h2 class="m-0"><i class="bi bi-bell-fill"></i></h2>
+                        </button>
+                    </div>
+                </div>
+                <!-- 상단바 끝 -->
+            </div>
+            <div id="main-content" class="px-4 pb-5">
+                <div id="home-center">
+                    <!-- 메인 컨텐츠 시작 -->
+                    <div class="main_text">
+                        <p>우리 사랑스러운 아이가 밥을 먹을 수 있도록 도와요</p>
+                    </div>
+                    <div>
+                        <div class="menu_wrapper">
+                            <div id="remote_feed" class="menu">
+                                <button class="menu_button">
+                                    <img src="./img/remote.png" class="button_img">
+                                    <br>
+                                    <span class="button_text">사료 원격 제공</span>
+                                </button>
+                            </div>
+                            <div id="reserve_feed" class="menu">
+                                <button class="menu_button">
+                                    <img src="./img/reserve.png" class="button_img">
+                                    <br>
+                                    <span class="button_text">사료 제공 예약</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="menu_wrapper">
+                            <div id="check_feeded" class="menu">
+                                <button class="menu_button">
+                                    <img src="./img/check.png" class="button_img">
+                                    <br>
+                                    <span class="button_text">사료 섭취 확인</span>
+                                </button>
+                            </div>
+                            <div id="humidity_control" class="menu">
+                                <button class="menu_button">
+                                    <img src="./img/humidity.png" class="button_img">
+                                    <br>
+                                    <span class="button_text">사료통 습도 조절</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="menu_wrapper">
+                            <div id="feed_container" class="menu">
+                                <button class="menu_button">
+                                    <img src="./img/container.jpg" class="button_img">
+                                    <br>
+                                    <span class="button_text">사료통 상태</span>
+                                </button>
+                            </div>
+                            <div id="feed_management" class="menu">
+                                <button class="menu_button">
+                                    <img src="./img/management.png" class="button_img">
+                                    <br>
+                                    <span class="button_text">사료 관리</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- 메인 컨텐츠 끝 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    setStatusBar();
+</script>
+<style>
+
+</style>
+
+</html>
