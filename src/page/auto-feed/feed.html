@@ -6,23 +6,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="/theme/js/main.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/theme/css/style.css">
     <title>Auto-Feed</title>
     <style>
-        .main_text{
-            margin:1%;
+        .main_text {
+            margin: 1%;
         }
-        .menu{
+
+        .menu {
             float: left;
             width: 50%;
             height: 33%;
         }
-        .menu_button{
+
+        .menu_button {
             float: center;
             background-color: white;
             border-color: black;
@@ -30,14 +35,14 @@
             width: 80%;
             border-radius: 5%;
         }
-        .button_img{
+
+        .button_img {
             float: center;
             width: 33%;
             height: 33%;
         }
-        .button_text{
-            
-        }
+
+        .button_text {}
     </style>
 </head>
 
@@ -59,81 +64,127 @@
                 <!-- 상단바 시작-->
                 <div class="border-bottom d-flex justify-content-between pt-3 px-2">
                     <div class="my-2">
-                        <button class="btn btn-default" type="button" onclick="location.href='../my-page' ">
-                          <h2 class="m-0"><i class="bi bi-list"></i></h2>
+                        <button class="btn btn-default" type="button" onclick="history.back(); ">
+                            <h2 class="m-0">
+                                <
+                            </h2>
                         </button>
                     </div>
                     <div class="my-2 py-3">
-                        <h1><b>자동 급식기</b></h1>
+                        <h5 class="m-0"><i class="bi bi-apple"></i> 자동 급식기</h5>
                     </div>
                     <div class="my-2">
-                        <button class="btn btn-default" type="button" onclick="location.href='../notification' ">
-                          <h2 class="m-0"><i class="bi bi-bell-fill"></i></h2>
+                        <button class="btn btn-default" type="button" onclick="location.href='home'; ">
+                            <h2 class="m-0"><i class="bi bi-house"></i></h2>
                         </button>
                     </div>
                 </div>
                 <!-- 상단바 끝 -->
             </div>
+
             <div id="main-content" class="px-4 pb-5">
                 <div id="home-center">
-                    <!-- 메인 컨텐츠 시작 -->
-                    <div class="main_text">
-                        <p>우리 사랑스러운 아이가 밥을 먹을 수 있도록 도와요</p>
+                    <div class="row">
+                        <div class="col-12 p-0" id="petCare">
+                            <a class="text-decoration-none" href="#" id="care">
+                                <div class="card m-2 p-2" style="height: 180px;">
+                                    <div style="display: flex;">
+                                        <div style="float: left; width: 66%;">
+                                            <header class="m-3">
+                                                <h2 class="text-start font1" style="color: black;">펫 돌보미</h2>
+                                            </header>
+                                            <main class="text-start mx-3" style="color: black;">우리 사랑스러운 아이가 밥을 먹을 수 있도록
+                                                도와요</main>
+                                        </div>
+                                        <div class="m-1" style="float: left; width: 10%;"><img src="/page/dog.png"
+                                                style="width: 150px; height: 150px;"></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <div class="menu_wrapper">
-                            <div id="remote_feed" class="menu">
-                                <button class="menu_button">
-                                    <img src="./img/remote.png" class="button_img">
-                                    <br>
-                                    <span class="button_text">사료 원격 제공</span>
-                                </button>
-                            </div>
-                            <div id="reserve_feed" class="menu">
-                                <button class="menu_button">
-                                    <img src="./img/reserve.png" class="button_img">
-                                    <br>
-                                    <span class="button_text">사료 제공 예약</span>
-                                </button>
-                            </div>
+                    <div class="row">
+                        <div class="col-6 p-0" id="autoFeed">
+                            <a class="text-decoration-none" href='#'>
+                                <div class="card m-2 square">
+                                    <header class="m-3">
+                                        <h2 style="color: black;" class="font1">사료 원격 제공</h2>
+                                    </header>
+                                    <main style="color: black;">ㅇㅇ</main>
+                                    <div><img src="/page/auto-feed/img/remote.png" style="width: 150px; height: 150px;">
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="menu_wrapper">
-                            <div id="check_feeded" class="menu">
-                                <button class="menu_button">
-                                    <img src="./img/check.png" class="button_img">
-                                    <br>
-                                    <span class="button_text">사료 섭취 확인</span>
-                                </button>
-                            </div>
-                            <div id="humidity_control" class="menu">
-                                <button class="menu_button">
-                                    <img src="./img/humidity.png" class="button_img">
-                                    <br>
-                                    <span class="button_text">사료통 습도 조절</span>
-                                </button>
-                            </div>
+                        <div class="col-6 p-0" id="autoWater">
+                            <a class="text-decoration-none" href='#'>
+                                <div class="card m-2 square">
+                                    <header class="m-3">
+                                        <h2 style="color: black;" class="font1">사료 제공 예약</h2>
+                                    </header>
+                                    <main style="color: black;">ㅇㅇ</main>
+                                    <div><img src="/page/auto-feed/img/reserve.png"
+                                            style="width: 150px; height: 150px;"></div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="menu_wrapper">
-                            <div id="feed_container" class="menu">
-                                <button class="menu_button">
-                                    <img src="./img/container.jpg" class="button_img">
-                                    <br>
-                                    <span class="button_text">사료통 상태</span>
-                                </button>
-                            </div>
-                            <div id="feed_management" class="menu">
-                                <button class="menu_button">
-                                    <img src="./img/management.png" class="button_img">
-                                    <br>
-                                    <span class="button_text">사료 관리</span>
-                                </button>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 p-0" id="autoFeed">
+                            <a class="text-decoration-none" href='#'>
+                                <div class="card m-2 square">
+                                    <header class="m-3">
+                                        <h2 style="color: black;" class="font1">사료 섭취 확인</h2>
+                                    </header>
+                                    <main style="color: black;">ㅇㅇ</main>
+                                    <div><img src="/page/auto-feed/img/check.png" style="width: 150px; height: 150px;">
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-
+                        <div class="col-6 p-0" id="autoWater">
+                            <a class="text-decoration-none" href='#'>
+                                <div class="card m-2 square">
+                                    <header class="m-3">
+                                        <h3 style="color: black;" class="font1">사료통 습도조절</h3>
+                                    </header>
+                                    <main style="color: black;">ㅇㅇ</main>
+                                    <div><img src="/page/auto-feed/img/humidity.png"
+                                            style="width: 150px; height: 150px;"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 p-0" id="autoFeed">
+                            <a class="text-decoration-none" href='#'>
+                                <div class="card m-2 square">
+                                    <header class="m-3">
+                                        <h2 style="color: black;" class="font1">사료통 상태</h2>
+                                    </header>
+                                    <main style="color: black;">ㅇㅇ</main>
+                                    <div><img src="/page/auto-feed/img/container.jpg"
+                                            style="width: 150px; height: 150px;"></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 p-0" id="autoWater">
+                            <a class="text-decoration-none" href='#'>
+                                <div class="card m-2 square">
+                                    <header class="m-3">
+                                        <h2 style="color: black;" class="font1">사료 관리</h2>
+                                    </header>
+                                    <main style="color: black;">ㅇㅇ</main>
+                                    <div><img src="/page/auto-feed/img/management.png"
+                                            style="width: 150px; height: 150px;"></div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                     <!-- 메인 컨텐츠 끝 -->
                 </div>
             </div>
+
         </div>
     </div>
 </body>
