@@ -17,26 +17,32 @@
     <title>TEST</title>
     <style>
         @media screen and (max-width: 767px) {
-            .body{
+            .body {
                 overflow: hidden;
             }
-            #top_box{
-                margin: 0; padding: 0;
+
+            #top_box {
+                margin: 0;
+                padding: 0;
                 width: 100%;
                 float: left;
             }
-            .button{
+
+            .button {
                 float: left;
                 width: 100%;
-                
+
             }
-            #button-ball{
+
+            #button-ball {
                 background: rgba(128, 128, 128, 0.486);
             }
-            #button-razer{
+
+            #button-razer {
                 background: rgb(231, 231, 231);
             }
-            #ball{
+
+            #ball {
                 width: 50%;
                 height: 150px;
                 text-align: center;
@@ -44,14 +50,14 @@
                 float: left;
                 font-size: 1.5em;
             }
-            #ball-2{
+            #ball-2 {
                 width: 50%;
                 height: 150px;
                 text-align: center;
                 line-height: 150px;
                 float: left;
             }
-            #razer{
+            #razer {
                 width: 50%;
                 height: 150px;
                 text-align: center;
@@ -59,7 +65,7 @@
                 float: left;
                 font-size: 1.5em;
             }
-            #razer-2{
+            #razer-2 {
                 width: 50%;
                 height: 150px;
                 text-align: center;
@@ -69,60 +75,66 @@
         }
     </style>
 </head>
-<body>
-    <div id="top_box">
-        <div class="bg-white sticky-top text-center">
-            <!-- 상태바 시작-->
-            <div class="d-flex justify-content-between pt-2 px-4" id="status-bar">
-                <div><b>12:00</b></div>
-                <div>
-                    <i class="bi bi-bluetooth"></i>
-                    <i class="bi bi-bar-chart-fill"></i>
-                    <i class="bi bi-wifi"></i>
-                    <i class="bi bi-battery-full"></i>
-                </div>
-            </div>
-            <!-- 상태바 끝-->
-            <!-- 상단바 시작-->
-            <div class="border-bottom d-flex justify-content-between pt-3 px-2">
-                <div class="my-2">
-                    <button class="btn btn-default" type="button" onclick="location.href='../my-page' ">
-                        <h2 class="m-0"><i class="bi bi-list"></i></h2>
-                    </button>
-                </div>
-                <div class="my-2 py-3">
-                    놀이기능
-                </div>
-                <div class="my-2">
-                    <button class="btn btn-default" type="button" onclick="location.href='../notification' ">
-                        <h2 class="m-0"><i class="bi bi-bell-fill"></i></h2>
-                    </button>
-                </div>
-            </div>
-            <!-- 상단바 끝 -->
-        </div>
-        <div style="height: 400px;">
 
-        </div>
-        <div>
-            <div class="button" id="button-ball" a href="">
-                <div  id="ball">
-                    <div><a><b>공 놀이기구</b></a></div>
+<body>
+    <div class="text-center">
+        <div class="container-mobile">
+            <div id="top_box">
+                <div class="bg-white sticky-top text-center">
+                    <!-- 상태바 시작-->
+                    <div class="d-flex justify-content-between pt-2 px-4" id="status-bar">
+                        <div><b>12:00</b></div>
+                        <div>
+                            <i class="bi bi-bluetooth"></i>
+                            <i class="bi bi-bar-chart-fill"></i>
+                            <i class="bi bi-wifi"></i>
+                            <i class="bi bi-battery-full"></i>
+                        </div>
+                    </div>
+                    <!-- 상태바 끝-->
+                    <!-- 상단바 시작-->
+                    <div class="border-bottom d-flex justify-content-between pt-3 px-2">
+                        <div class="my-2">
+                            <button class="btn btn-default" type="button" onclick="location.href='../my-page' ">
+                                <h2 class="m-0"><i class="bi bi-list"></i></h2>
+                            </button>
+                        </div>
+                        <div class="my-2 py-3">
+                            놀이기능
+                        </div>
+                        <div class="my-2">
+                            <button class="btn btn-default" type="button" onclick="location.href='../notification' ">
+                                <h2 class="m-0"><i class="bi bi-bell-fill"></i></h2>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 상단바 끝 -->
                 </div>
-                <div id="ball-2">
-                    <i class="fa-solid fa-dog fa-2xl"></i>
+                <div style="height: 400px;">
+
                 </div>
+                <div>
+                    <div class="button" id="button-ball" a href="">
+                        <div id="ball">
+                            <div><a><b>공 놀이기구</b></a></div>
+                        </div>
+                        <div id="ball-2">
+                            <i class="fa-solid fa-dog fa-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="button" id="button-razer" a href="">
+                        <div id="razer">
+                            <div><a><b>고양이 레이져</b></a></div>
+                        </div>
+                        <div id="razer-2">
+                            <i class="fa-solid fa-cat fa-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="button" id="button-razer" a href="">
-                <div id="razer">
-                    <div ><a><b>고양이 레이져</b></a></div>
-                </div>
-                <div id="razer-2">
-                    <i class="fa-solid fa-cat fa-2xl"></i>
-                </div>
-            </div>
         </div>
-        
-    </div>  
+    </div>
 </body>
+
 </html>

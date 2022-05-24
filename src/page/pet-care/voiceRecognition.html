@@ -1,46 +1,136 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+<html lang="en">
+  <!-- 마이 페이지 -->
 
-    <!-- Bootstrap CSS -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="/theme/js/main.js"></script>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
-      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
     />
-
-    <title>Hello, world!</title>
+    <link rel="stylesheet" href="/theme/css/style.css" />
+    <title>Pet-care: 음성인식</title>
   </head>
+
   <body>
-    <h1>Hello, world!</h1>
-    <button type="button" class="btn btn-danger">TEST</button>
+    <div class="text-center">
+      <div class="container-mobile">
+        <div class="bg-white sticky-top">
+          <!-- 상태바 시작-->
+          <div class="d-flex justify-content-between pt-2 px-4" id="status-bar">
+            <div><b>12:00</b></div>
+            <div>
+              <i class="bi bi-bluetooth"></i>
+              <i class="bi bi-bar-chart-fill"></i>
+              <i class="bi bi-wifi"></i>
+              <i class="bi bi-battery-full"></i>
+            </div>
+          </div>
+          <!-- 상태바 끝-->
+          <!-- 상단바 시작-->
+          <div class="border-bottom d-flex justify-content-between pt-3 px-2">
+            <div class="my-2">
+              <button
+                class="btn btn-default"
+                type="button"
+                onclick="history.back(); "
+              >
+                <h2 class="m-0"><</h2>
+              </button>
+            </div>
+            <div class="my-2 py-3">
+              <h5 class="m-0"></i>음성인식</h5>
+            </div>
+            <div class="my-2">
+              <button
+                class="btn btn-default"
+                type="button"
+                onclick="location.href='home'; "
+              >
+                <h2 class="m-0"><i class="bi bi-house"></i></h2>
+              </button>
+            </div>
+          </div>
+          <!-- 상단바 끝 -->
+        </div>
+        <div id="main-content" class="px-4 pb-5">
+          <div id="home-center">
+            <!-- 메인 컨텐츠 시작 -->
 
-    <!-- Optional JavaScript; choose one of the two! -->
+            <!--현재재생중-->
+            <div class="row">
+              <div class="col p-0">
+                  <div class="card rect41 m-2">
+                    <h5>강이야 괜찮아.mp3</h5>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <button type="button" class="btn btn-secondary"><<</button>
+                      <button type="button" class="btn btn-secondary" id="pause/play">Pause/play</button>
+                      <button type="button" class="btn btn-secondary">>></button>
+                    </div>
+                  </div>
+              </div>
+            </div>
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
-      crossorigin="anonymous"
-    ></script>
+            <!--보호자 음성 & 펫 뮤직-->
+            <div class="row">
+              <div class="col-6 p-0">
+                  <div class="card m-2 square">
+                    <h3 style="font-weight: bold;">보호자 음성</h3>
+                    <img src="talking.jpg" alt="보호자 음성 이미지" width="100" height="100" style="margin-left: auto; margin-right: auto; display: block;">
+                  </div>
+              </div>
+              <div class="col-6 p-0">
+                  <div class="card m-2 square" >
+                    <h3 style="font-weight: bold;">펫 뮤직</h3>
+                    <img src="pet music.jpg" alt="펫 뮤직 이미지" width="100" height="100" style="margin-left: auto; margin-right: auto; display: block;">
+                  </div>
+              </div>
+            </div>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
-    -->
+            <!--보호자 음성 녹음-->
+            <div class="row">
+              <div class="col p-0">
+                  <div class="card rect41 m-2">
+                    <h3 style="font-weight: bold;">보호자 음성 녹음</h3>
+                    <img src="record.jpg" alt="보호자 음성 녹음 이미지" width="100" height="100" style="margin-left: auto; margin-right: auto; display: block;">
+                  </div>
+              </div>
+            </div>
+
+            <!--
+            <div class="row">
+              <div class="col-6 p-0">
+                  <div class="card m-2 square"></div>
+              </div>
+              <div class="col-6 p-0">
+                  <div class="card m-2 rect21"></div>
+                  <div class="card m-2 rect21"></div>
+              </div>
+            </div>
+            -->
+
+            <!-- 메인 컨텐츠 끝 -->
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
+  <script>
+    setStatusBar();
+  </script>
 </html>
