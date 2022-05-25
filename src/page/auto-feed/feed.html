@@ -15,34 +15,20 @@
     <script src="/theme/js/main.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/theme/css/style.css">
+    <!---sweet alert 이용을 위해 추가한 코드 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+         crossorigin="anonymous"
+      />
     <title>Auto-Feed</title>
     <style>
-        .main_text {
-            margin: 1%;
-        }
-
-        .menu {
-            float: left;
-            width: 50%;
-            height: 33%;
-        }
-
-        .menu_button {
-            float: center;
+        .menuButton{
+            border: none;
             background-color: white;
-            border-color: black;
-            margin: 2%;
-            width: 80%;
-            border-radius: 5%;
         }
-
-        .button_img {
-            float: center;
-            width: 33%;
-            height: 33%;
-        }
-
-        .button_text {}
     </style>
 </head>
 
@@ -107,24 +93,28 @@
                         <div class="col-6 p-0" id="autoFeed">
                             <a class="text-decoration-none" href='#'>
                                 <div class="card m-2 square">
+                                    <button class="menuButton" id="remote_feed_b">
                                     <header class="m-3">
                                         <h2 style="color: black;" class="font1">사료 원격 제공</h2>
                                     </header>
                                     <main style="color: black;">ㅇㅇ</main>
                                     <div><img src="/page/auto-feed/img/remote.png" style="width: 150px; height: 150px;">
                                     </div>
+                                    </button>
                                 </div>
                             </a>
                         </div>
                         <div class="col-6 p-0" id="autoWater">
                             <a class="text-decoration-none" href='#'>
                                 <div class="card m-2 square">
+                                    <button class="menuButton" id="reserve_feed_b">
                                     <header class="m-3">
                                         <h2 style="color: black;" class="font1">사료 제공 예약</h2>
                                     </header>
                                     <main style="color: black;">ㅇㅇ</main>
                                     <div><img src="/page/auto-feed/img/reserve.png"
                                             style="width: 150px; height: 150px;"></div>
+                                    </button>
                                 </div>
                             </a>
                         </div>
@@ -133,24 +123,28 @@
                         <div class="col-6 p-0" id="autoFeed">
                             <a class="text-decoration-none" href='#'>
                                 <div class="card m-2 square">
+                                    <button class="menuButton" id="check_feeded_b">
                                     <header class="m-3">
                                         <h2 style="color: black;" class="font1">사료 섭취 확인</h2>
                                     </header>
                                     <main style="color: black;">ㅇㅇ</main>
                                     <div><img src="/page/auto-feed/img/check.png" style="width: 150px; height: 150px;">
                                     </div>
+                                </button>
                                 </div>
                             </a>
                         </div>
                         <div class="col-6 p-0" id="autoWater">
                             <a class="text-decoration-none" href='#'>
                                 <div class="card m-2 square">
+                                    <button class="menuButton" id="humidity_control_b">
                                     <header class="m-3">
                                         <h3 style="color: black;" class="font1">사료통 습도조절</h3>
                                     </header>
                                     <main style="color: black;">ㅇㅇ</main>
                                     <div><img src="/page/auto-feed/img/humidity.png"
                                             style="width: 150px; height: 150px;"></div>
+                                    </button>
                                 </div>
                             </a>
                         </div>
@@ -159,24 +153,28 @@
                         <div class="col-6 p-0" id="autoFeed">
                             <a class="text-decoration-none" href='#'>
                                 <div class="card m-2 square">
+                                    <button class="menuButton" id="feed_container_b">
                                     <header class="m-3">
                                         <h2 style="color: black;" class="font1">사료통 상태</h2>
                                     </header>
                                     <main style="color: black;">ㅇㅇ</main>
                                     <div><img src="/page/auto-feed/img/container.jpg"
                                             style="width: 150px; height: 150px;"></div>
+                                    </button>
                                 </div>
                             </a>
                         </div>
                         <div class="col-6 p-0" id="autoWater">
                             <a class="text-decoration-none" href='#'>
                                 <div class="card m-2 square">
+                                    <button class="menuButton" id="feed_management_b">
                                     <header class="m-3">
                                         <h2 style="color: black;" class="font1">사료 관리</h2>
                                     </header>
                                     <main style="color: black;">ㅇㅇ</main>
                                     <div><img src="/page/auto-feed/img/management.png"
                                             style="width: 150px; height: 150px;"></div>
+                                    </button>
                                 </div>
                             </a>
                         </div>
@@ -187,6 +185,139 @@
 
         </div>
     </div>
+    <script>
+        let feed = 60;
+        let feed_cont = 0;
+        let humidity = 80;
+        let reserve_cont = 0;
+        let reserve_time = [];
+
+        $("#remote_feed_b").click(function () {
+            Swal.fire({
+             title: '원격으로 사료를 제공하시겠습니까?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '제공',
+            cancelButtonText: '취소',
+            }).then((result) => {
+                 if (result.isConfirmed) {
+                     const Toast = Swal.mixin({
+                     toast: true,
+                    position: 'center',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                    })
+                     Toast.fire({
+                    icon: 'success',
+                    title: '사료를 제공중입니다.'
+                    })
+                    setTimeout(function(){
+                    Swal.fire({
+                    icon: 'success',
+                    title: '사료 제공 완료!',
+                    text: '원격으로 사료 제공이 완료되었습니다!',
+                });
+                },3000);
+                feed = feed - 5;
+                feed_cont = feed_cont + 1;
+            }
+    })
+
+    
+  });
+        
+
+        $('#reserve_feed_b').on('click', function () {
+            (async () => {
+                let { value : r_time } = await Swal.fire({
+                title: '예약 시간을 입력하세요',
+                text: '예시 : 12:55 (양식을 맞추어주세요) ',
+                input: 'text',
+                inputPlaceholder: '예약 시간'
+            })
+            if (r_time) {
+                reserve_cont = reserve_cont + 1;
+                reserve_time.push(r_time);
+                Swal.fire(r_time+'으로 예약되었습니다!','','success');
+            }
+            else{
+                Swal.fire('예약이 취소되었습니다','','error');
+            }
+         })()
+        })
+
+        $('#check_feeded_b').on('click', function () {
+            let eat = (Math.random(2)*10)%2;
+            if(eat > 1){
+                console.log(eat);
+                Swal.fire({
+                icon: 'error',
+                title: '사료가 남아있어요',
+            });
+            }
+            else{
+                console.log(eat);
+                Swal.fire({
+                icon: 'success',
+                title: '사료를 다 먹었습니다!',
+    });
+            }
+        })
+        
+        
+        $('#humidity_control_b').on('click', function () {
+            (async () => {
+                let { value : set_humidity } = await Swal.fire({
+                title: '현재 습도는 '+humidity+'%입니다.',
+                text: '습도를 몇%로 조정할까요? (적정습도 50% ~ 70%)',
+                input: 'text',
+                inputPlaceholder: 'ex - 40'
+            })
+            if (set_humidity) {
+                humidity = set_humidity;
+                Swal.fire('습도를 '+humidity+'%로 설정했습니다!','','success');
+            }
+            else{
+                Swal.fire('예약이 취소되었습니다','','error');
+            }
+         })()
+        })
+        
+        
+        $('#feed_container_b').on('click', function () {
+            let msg = '사료통의 상태가 좋습니다!';
+            let icon = 'success';
+            if(feed < 50 && humidity > 70){
+                msg = '사료의 양이 적습니다! 습도가 높습니다!';
+                icon = 'warning';
+            }
+            else if(feed < 50 && humidity < 70){
+                msg = '사료의 양이 적습니다';
+                icon = 'warning';
+            }
+            else if(feed > 50 && humidity > 70){
+                msg = '습도가 높습니다';
+                icon = 'warning';
+            }
+            Swal.fire(
+                '남은 사료 '+feed+'%\n'
+                +'현재 습도 '+humidity+'%\n'
+                ,msg,icon);
+        })
+        
+        $('#feed_management_b').on('click', function () {
+            Swal.fire('오늘 사료 제공 횟수 : '+feed_cont
+            +'\n예약된 사료 제공 횟수 :'+reserve_cont
+            +'\n예약 시간 : '+reserve_time,'','success');
+        })
+      </script>
 </body>
 <script>
     setStatusBar();
