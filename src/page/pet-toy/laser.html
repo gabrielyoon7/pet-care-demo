@@ -6,64 +6,150 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="/theme/js/main.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/theme/css/style.css">
     <script src="https://kit.fontawesome.com/c3ddaf2703.js" crossorigin="anonymous"></script>
-    <title>레이저</title>
+    <title>고양이 레이저 게임</title>
 </head>
 
 <body>
     <div class="text-center">
         <div class="container-mobile">
-            <div class="bg-white sticky-top">
-                <!-- 상태바 시작-->
-                <div class="d-flex justify-content-between pt-2 px-4" id="status-bar">
-                    <div><b>12:00</b></div>
-                    <div>
-                        <i class="bi bi-bluetooth"></i>
-                        <i class="bi bi-bar-chart-fill"></i>
-                        <i class="bi bi-wifi"></i>
-                        <i class="bi bi-battery-full"></i>
+            <div class="text-center">
+                <div class="container-mobile">
+                    <div class="bg-white sticky-top">
+                        <!-- 상태바 시작-->
+                        <div class="d-flex justify-content-between pt-2 px-4" id="status-bar">
+                            <div><b>12:00</b></div>
+                            <div>
+                                <i class="bi bi-bluetooth"></i>
+                                <i class="bi bi-bar-chart-fill"></i>
+                                <i class="bi bi-wifi"></i>
+                                <i class="bi bi-battery-full"></i>
+                            </div>
+                        </div>
+                        <!-- 상태바 끝-->
+                        <!-- 상단바 시작-->
+                        <div class="border-bottom d-flex justify-content-between pt-3 px-2">
+                            <div class="my-2">
+                                <button class="btn btn-default" type="button" onclick="history.back(); ">
+                                    <h2 class="m-0">
+                                        <
+                                    </h2>
+                                </button>
+                            </div>
+                            <div class="my-2 py-3">
+                                <h5 class="m-0"></i>고양이 레이저</h5>
+                            </div>
+                            <div class="my-2">
+                                <button class="btn btn-default" type="button" onclick="location.href='home'; ">
+                                    <h2 class="m-0"><i class="bi bi-house"></i></h2>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- 상단바 끝 -->
                     </div>
-                </div>
-                <!-- 상태바 끝-->
-                <!-- 상단바 시작-->
-                <div class="border-bottom d-flex justify-content-between pt-3 px-2">
-                    <div class="my-2">
-                        <button class="btn btn-default" type="button" onclick="location.href='../my-page' ">
-                            <h2 class="m-0"><i class="bi bi-list"></i></h2>
-                        </button>
-                    </div>
-                    <div class="my-2 py-3">
-                        고양이 레이저
-                    </div>
-                    <div class="my-2">
-                        <button class="btn btn-default" type="button" onclick="location.href='../notification' ">
-                            <h2 class="m-0"><i class="bi bi-bell-fill"></i></h2>
-                        </button>
-                    </div>
-                </div>
-                <!-- 상단바 끝 -->
-            </div>
-            <div id="main-content" class="px-4 pb-5" style=" height:400px; font:bold; font-size:30pt;  ">
-                <div id="home-center">
-                    <!-- 메인 컨텐츠 시작 -->
-                    </br></br><p id="center-msg">고양이 레이저를 제어하는 페이지 입니다..</p>
+                    <div id="main-content" class="px-4 pb-5" style=" height:400px; font:bold; font-size:30pt;  ">
+                        <div id="home-center">
+                            <!-- 메인 컨텐츠 시작 -->
+                            </br></br>
+                            <p id="center-msg">고양이 레이저를 제어하는 페이지입니다.</p>
 
-                    <!-- 메인 컨텐츠 끝 -->
+                            <!-- 메인 컨텐츠 끝 -->
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <a type="button" class="text-decoration-none text-dark w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <div id="btnOn"
+                             class="d-flex align-items-center justify-content-center"
+                             onclick="btnOn_click();"
+                             style=" height:200px;  border-top:1px solid grey; font-size:40px; background: #c1c8cb;">
+                            <div>놀이시작   <i class="fa-solid fa-cat"></i></div>
+                        </div>
+                    </a>
+                    <a type="button" class="text-decoration-none text-dark w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <div id="btnOn"
+                             class="d-flex align-items-center justify-content-center"
+                             onclick="btnOff_click();"
+                             style=" height:200px;  border-top:1px solid grey; font-size:40px; background: #f0f4f5;">
+                            <div>놀이종료   <i class="fa-solid fa-ban"></i></div>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <div id="btnOn" onclick="btnOn_click();" style=" height:200px;  border-top:1px solid grey; font-size:40px; background: #c1c8cb;">
-                </br><pre>놀이시작   <i class="fa-solid fa-cat"></i></pre>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">고양이 레이저 게임</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-raiser">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="btnOff" onclick="btnOff_click();" style=" height:200px;  border-top:1px solid grey; font-size:40px; background: #f0f4f5;">
-                </br><pre>놀이종료   <i class="fa-solid fa-ban"></i></pre>
-            </div>
-        </div>
-    </div>
 </body>
+<script>
+    setStatusBar();
+    const msgElement = document.getElementById("center-msg");
+    const modalElement = document.getElementById("modal-body");
+    const startMsg = "고양이 레이저를 시작합니다...<br>"
+    let isWorking = false;
+    let raiser;
+    let num;
+    function btnOn_click() {
+        isWorking ? playRaiserGameErr() : playRaiserGame()
+    }
+    const playRaiserGameErr = () => {
+        modalElement.innerHTML = "게임이 이미 진행중 입니다."
+    }
+    const playRaiserGame = () => {
+        isWorking = true;
+        modalElement.innerHTML = "고양이 레이저를 시작했습니다. 반려묘의 눈에 레이저를 비추지 않게 조심하세요."
+        num = 0;
+        clearInterval(distance);
+        distance = setInterval(function () {
+            num++;
+            msgElement.innerHTML = startMsg + " " + num * 24 * (1 / 3600) + "(km)";
+        }, 1000)
+    }
+    function btnOff_click() {
+        isWorking ? stopRaiserGame() : stopRaiserGameErr()
+    }
+    const stopRaiserGameErr = () => {
+        modalElement.innerHTML = "진행중인 게임이 없습니다.";
+    }
+    const stopRaiserGame = () => {
+        isWorking = false;
+        msgElement.innerText = "운동거리: " + num * 24 * (1 / 3600) + "(km)";
+        modalElement.innerHTML = "기계를 종료하세요."
+        clearInterval(distance);
+    }
+
+
+</script>
+<style>
+    @media screen and (max-width: 767px) {
+        .body {
+            overflow: hidden;
+        }
+    }
+</style>
+
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- 마이 페이지 -->
+  <!-- 메인 페이지 -->
 
   <head>
     <meta charset="UTF-8" />
@@ -24,7 +24,21 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="/theme/css/style.css" />
-    <title>Pet-care: 음성인식</title>
+    <!---sweet alert 이용을 위해 추가한 코드 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+         crossorigin="anonymous"
+      /> -->
+    <title>Pet-care:VoiceRecognition</title>
+    <style>
+      .menuButton {
+        border: none;
+        background-color: white;
+      }
+    </style>
   </head>
 
   <body>
@@ -54,13 +68,13 @@
               </button>
             </div>
             <div class="my-2 py-3">
-              <h5 class="m-0"></i>음성인식</h5>
+              <h5 class="m-0"><i class="bi bi-apple"></i>음성인식</h5>
             </div>
             <div class="my-2">
               <button
                 class="btn btn-default"
                 type="button"
-                onclick="location.href='home'; "
+                onclick="location.href='../home'; "
               >
                 <h2 class="m-0"><i class="bi bi-house"></i></h2>
               </button>
@@ -68,69 +82,249 @@
           </div>
           <!-- 상단바 끝 -->
         </div>
+
         <div id="main-content" class="px-4 pb-5">
           <div id="home-center">
-            <!-- 메인 컨텐츠 시작 -->
-
             <!--현재재생중-->
             <div class="row">
               <div class="col p-0">
-                  <div class="card rect41 m-2">
-                    <h5>강이야 괜찮아.mp3</h5>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                      <button type="button" class="btn btn-secondary"><<</button>
-                      <button type="button" class="btn btn-secondary" id="pause/play">Pause/play</button>
-                      <button type="button" class="btn btn-secondary">>></button>
-                    </div>
+                <div class="card rect41 m-2">
+                  <h5>강이야 괜찮아.mp3</h5>
+                  <div
+                    class="btn-group"
+                    role="group"
+                    aria-label="Basic example"
+                  >
+                    <button type="button" class="btn btn-secondary"><<</button>
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      onclick="playBtnOn_click();"
+                    >
+                      <p id="pauseplay">Pause</p>
+                    </button>
+                    <button type="button" class="btn btn-secondary">>></button>
                   </div>
+                </div>
               </div>
             </div>
 
-            <!--보호자 음성 & 펫 뮤직-->
             <div class="row">
-              <div class="col-6 p-0">
+              <!--보호자 음성-->
+              <div class="col-6 p-0" id="voice">
+                <a class="text-decoration-none" href="#">
                   <div class="card m-2 square">
-                    <h3 style="font-weight: bold;">보호자 음성</h3>
-                    <img src="talking.jpg" alt="보호자 음성 이미지" width="100" height="100" style="margin-left: auto; margin-right: auto; display: block;">
+                    <button class="menuButton" id="owner_voice">
+                      <header class="m-3">
+                        <h2 style="color: black" class="font1">보호자 음성</h2>
+                      </header>
+                      <main style="color: black">ㅇㅇ</main>
+                      <div>
+                        <img
+                          src="/page/pet-care/talking.jpg"
+                          style="width: 150px; height: 150px"
+                        />
+                      </div>
+                    </button>
                   </div>
+                </a>
               </div>
-              <div class="col-6 p-0">
-                  <div class="card m-2 square" >
-                    <h3 style="font-weight: bold;">펫 뮤직</h3>
-                    <img src="pet music.jpg" alt="펫 뮤직 이미지" width="100" height="100" style="margin-left: auto; margin-right: auto; display: block;">
+              <!--펫 뮤직-->
+              <div class="col-6 p-0" id="autoWater">
+                <a class="text-decoration-none" href="#">
+                  <div class="card m-2 square">
+                    <button class="menuButton" id="pet_music">
+                      <header class="m-3">
+                        <h2 style="color: black" class="font1">펫 뮤직</h2>
+                      </header>
+                      <main style="color: black">ㅇㅇ</main>
+                      <div>
+                        <img
+                          src="/page/pet-care/pet music.jpg"
+                          style="width: 150px; height: 150px"
+                        />
+                      </div>
+                    </button>
                   </div>
+                </a>
               </div>
             </div>
 
             <!--보호자 음성 녹음-->
             <div class="row">
-              <div class="col p-0">
-                  <div class="card rect41 m-2">
-                    <h3 style="font-weight: bold;">보호자 음성 녹음</h3>
-                    <img src="record.jpg" alt="보호자 음성 녹음 이미지" width="100" height="100" style="margin-left: auto; margin-right: auto; display: block;">
+              <div class="col-12 p-0" id="petCare">
+                <a class="text-decoration-none" href="#">
+                  <div class="card m-2 p-2" style="height: 180px">
+                    <button
+                      class="menuButton"
+                      id="btnOn"
+                      onclick="btnOn_click();"
+                    >
+                      <div style="display: flex">
+                        <div style="float: left; width: 66%">
+                          <header class="m-3">
+                            <h2 class="text-start font1" style="color: black">
+                              보호자 음성 녹음
+                            </h2>
+                          </header>
+                          <main class="text-start mx-3" style="color: black">
+                            <div>
+                              <div>
+                                <p id="center-msg">
+                                  &nbsp&nbsp음성녹음 페이지입니다.
+                                </p>
+                                <div class="modal-body" id="modal-body"></div>
+                              </div>
+                            </div>
+                          </main>
+                        </div>
+                        <div class="m-1" style="float: left; width: 10%">
+                          <img
+                            src="/page/pet-care/record.jpg"
+                            style="width: 150px; height: 150px"
+                          />
+                        </div>
+                      </div>
+                    </button>
                   </div>
+                </a>
               </div>
             </div>
-
-            <!--
-            <div class="row">
-              <div class="col-6 p-0">
-                  <div class="card m-2 square"></div>
-              </div>
-              <div class="col-6 p-0">
-                  <div class="card m-2 rect21"></div>
-                  <div class="card m-2 rect21"></div>
-              </div>
-            </div>
-            -->
 
             <!-- 메인 컨텐츠 끝 -->
           </div>
         </div>
       </div>
     </div>
+    <script>
+      setStatusBar();
+      const msgElement = document.getElementById("center-msg");
+      const modalElement = document.getElementById("modal-body");
+      const startMsg = "&nbsp&nbsp녹음중...";
+      let isWorking = false;
+      let timer;
+      let num;
+
+      const playElement = document.getElementById("pauseplay");
+      //const playMsg = <img src="/page/pet-care/play.PNG" alt="play 이미지" />;
+      //const pauseMsg = (
+      // <img src="/page/pet-care/pause.PNG" alt="pause 이미지" />
+      //);
+      let isPlaying = false;
+
+      //보호자 음성 재생
+      $("#owner_voice").click(function () {
+        Swal.fire({
+          title: "보호자 음성을 재생하시겠습니까?",
+          icon: "question",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "재생",
+          cancelButtonText: "취소",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            const Toast = Swal.mixin({
+              toast: true,
+              position: "center",
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.addEventListener("mouseenter", Swal.stopTimer);
+                toast.addEventListener("mouseleave", Swal.resumeTimer);
+              },
+            });
+            Toast.fire({
+              icon: "success",
+              title: "보호자 음성 목록으로 이동중입니다",
+            });
+            setTimeout(function () {
+              Swal.fire({
+                icon: "error",
+                title: "보호자 음성 목록이 없습니다",
+                text: " 하단 보호자 음성 녹음을 수행해주세요.",
+              });
+            }, 3000);
+          }
+        });
+      });
+
+      //펫 뮤직 재생
+      $("#pet_music").click(function () {
+        Swal.fire({
+          title: "펫뮤직을 재생하시겠습니까?",
+          icon: "question",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "재생",
+          cancelButtonText: "취소",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            const Toast = Swal.mixin({
+              toast: true,
+              position: "center",
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.addEventListener("mouseenter", Swal.stopTimer);
+                toast.addEventListener("mouseleave", Swal.resumeTimer);
+              },
+            });
+            Toast.fire({
+              icon: "success",
+              title: "펫 뮤직 목록으로 이동중입니다",
+            });
+            setTimeout(function () {
+              Swal.fire({
+                icon: "error",
+                title: "펫 뮤직 목록이 없습니다",
+                text: " 펫 뮤직을 등록해주세요.",
+              });
+            }, 3000);
+          }
+        });
+      });
+
+      //보호자 음성 녹음
+      function btnOn_click() {
+        isWorking ? stopRecognition() : playRecognition();
+      }
+      const playRecognition = () => {
+        isWorking = true;
+        modalElement.innerHTML = "녹음을 시작했습니다.";
+        num = 0;
+        clearInterval(timer);
+        timer = setInterval(function () {
+          num++;
+          msgElement.innerHTML = startMsg + " " + num + "초";
+        }, 1000);
+      };
+      const stopRecognition = () => {
+        isWorking = false;
+        msgElement.innerText = "녹음시간 : " + num + "(초)";
+        modalElement.innerHTML = "녹음이 종료되었습니다.";
+        clearInterval(timer);
+      };
+
+      //play&pause 관련
+      function playBtnOn_click() {
+        isPlaying ? stopButton() : playButton();
+      }
+      const playButton = () => {
+        isPlaying = true;
+        playElement.innerHTML = "Play";
+      };
+      const stopButton = () => {
+        isPlaying = false;
+        playElement.innerHTML = "Pause";
+      };
+    </script>
   </body>
   <script>
     setStatusBar();
   </script>
+  <style></style>
 </html>
