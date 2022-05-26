@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- 메인 페이지123123123 -->
+  <!-- 메인 페이지 -->
 
   <head>
     <meta charset="UTF-8" />
@@ -75,11 +75,52 @@
         <div id="main-content" class="px-4 pb-5">
           <div id="home-center">
             <!-- 메인 컨텐츠 시작 -->
-            <div class="recording">
-              카메라
-              <i class="fa-solid fa-video"></i>
-            </div>
+                <!-- Button trigger modal -->
+                
+                <a href="#" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div class="recording">
+                    카메라
+                    <i class="fa-solid fa-video"></i>
+                </div>
+            </a>
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">카메라</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          카메라가 실행중입니다. 잠시만 기다려주세요.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
             <div class="infrared-light">적외선 카메라</div>
+            </a>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">적외선 카메라</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          적외선 카메라가 실행중입니다. 잠시만 기다려주세요.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
             <!-- 메인 컨텐츠 끝 -->
           </div>
         </div>
