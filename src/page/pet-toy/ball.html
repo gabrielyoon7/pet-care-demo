@@ -55,34 +55,35 @@
                         </div>
                         <!-- 상단바 끝 -->
                     </div>
-                    <div id="main-content" class="px-4 pb-5" style=" height:400px; font:bold; font-size:30pt;  ">
+                    <div id="main-content" class="px-4 pb-5" style="height:700px; font:bold; font-size:30pt;  ">
                         <div id="home-center">
                             <!-- 메인 컨텐츠 시작 -->
                             </br></br>
                             <p id="center-msg">공놀이를 제어하는 페이지입니다.</p>
+                            
 
                             <!-- 메인 컨텐츠 끝 -->
                         </div>
+                        <!-- Button trigger modal -->
+                        <a type="button" class="text-decoration-none text-dark w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div
+                            id="btnOn"
+                            class="ball-btn d-flex align-items-center justify-content-center"
+                            onclick="btnOn_click();"
+                            >
+                                <div>놀이시작   <i class="fa-solid fa-futbol"></i></div>
+                            </div>
+                        </a>
+                        <a type="button" class="text-decoration-none text-dark w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div
+                            id="btnOn"
+                            class="ball-btn d-flex align-items-center justify-content-center"
+                            onclick="btnOff_click();"
+                            >
+                                <div>놀이종료   <i class="fa-solid fa-ban"></i></div>
+                            </div>
+                        </a>
                     </div>
-                    <!-- Button trigger modal -->
-                    <a type="button" class="text-decoration-none text-dark w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <div
-                         id="btnOn"
-                         class="d-flex align-items-center justify-content-center"
-                         onclick="btnOn_click();"
-                         style=" height:200px;  border-top:1px solid grey; font-size:40px; background: #c1c8cb;">
-                            <div>놀이시작   <i class="fa-solid fa-futbol"></i></div>
-                        </div>
-                    </a>
-                    <a type="button" class="text-decoration-none text-dark w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <div
-                         id="btnOn"
-                         class="d-flex align-items-center justify-content-center"
-                         onclick="btnOff_click();"
-                         style=" height:200px;  border-top:1px solid grey; font-size:40px; background: #f0f4f5;">
-                            <div>놀이종료   <i class="fa-solid fa-ban"></i></div>
-                        </div>
-                    </a>
                 </div>
             </div>
 
@@ -127,7 +128,7 @@
         clearInterval(timer);
         timer = setInterval(function () {
             num++;
-            msgElement.innerHTML = startMsg+" "+num+"초";
+            msgElement.innerHTML = startMsg + '<img src="./joke-bear.gif" alt="" style="height: 100px;">';
         }, 1000)
     }
     function btnOff_click() {
@@ -138,7 +139,7 @@
     }
     const stopBallGame = () => {
         isWorking = false;
-        msgElement.innerText = "운동시간 : " + num + "(초)";
+        msgElement.innerText = "운동시간 : " + num + "초";
         modalElement.innerHTML = "기계를 종료하신 후, 공을 제자리에 돌려 넣어주세요!"
         clearInterval(timer);
     }
@@ -151,6 +152,17 @@
             overflow: hidden;
         }
 
+    }
+    #home-center{
+        height: 300px;
+    }
+    .ball-btn{
+        background-color: white;
+        border:1px solid #435ebe !important;
+        font-size:40px;
+        height: 100px;
+        margin: 20px;
+        border-radius: 1rem;
     }
 </style>
 

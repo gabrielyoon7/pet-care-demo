@@ -56,7 +56,7 @@
                         </div>
                         <!-- 상단바 끝 -->
                     </div>
-                    <div id="main-content" class="px-4 pb-5" style=" height:400px; font:bold; font-size:30pt;  ">
+                    <div id="main-content" class="px-4 pb-5" style=" height:700px; font:bold; font-size:30pt;  ">
                         <div id="home-center">
                             <!-- 메인 컨텐츠 시작 -->
                             </br></br>
@@ -64,24 +64,24 @@
 
                             <!-- 메인 컨텐츠 끝 -->
                         </div>
+                        <!-- Button trigger modal -->
+                        <a type="button" class="text-decoration-none text-dark w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div id="btnOn"
+                                class="laser-btn d-flex align-items-center justify-content-center"
+                                onclick="btnOn_click();"
+                                >
+                                <div>놀이시작   <i class="fa-solid fa-cat"></i></div>
+                            </div>
+                        </a>
+                        <a type="button" class="text-decoration-none text-dark w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <div id="btnOn"
+                                class="laser-btn d-flex align-items-center justify-content-center"
+                                onclick="btnOff_click();"
+                                >
+                                <div>놀이종료   <i class="fa-solid fa-ban"></i></div>
+                            </div>
+                        </a>
                     </div>
-                    <!-- Button trigger modal -->
-                    <a type="button" class="text-decoration-none text-dark w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <div id="btnOn"
-                             class="d-flex align-items-center justify-content-center"
-                             onclick="btnOn_click();"
-                             style=" height:200px;  border-top:1px solid grey; font-size:40px; background: #c1c8cb;">
-                            <div>놀이시작   <i class="fa-solid fa-cat"></i></div>
-                        </div>
-                    </a>
-                    <a type="button" class="text-decoration-none text-dark w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <div id="btnOn"
-                             class="d-flex align-items-center justify-content-center"
-                             onclick="btnOff_click();"
-                             style=" height:200px;  border-top:1px solid grey; font-size:40px; background: #f0f4f5;">
-                            <div>놀이종료   <i class="fa-solid fa-ban"></i></div>
-                        </div>
-                    </a>
                 </div>
             </div>
 
@@ -111,7 +111,7 @@
     const modalElement = document.getElementById("modal-body");
     const startMsg = "고양이 레이저를 시작합니다...<br>"
     let isWorking = false;
-    let raiser;
+    let distance;
     let num;
     function btnOn_click() {
         isWorking ? playRaiserGameErr() : playRaiserGame()
@@ -126,7 +126,8 @@
         clearInterval(distance);
         distance = setInterval(function () {
             num++;
-            msgElement.innerHTML = startMsg + " " + num * 24 * (1 / 3600) + "(km)";
+            msgElement.innerHTML = startMsg + " " + (num * 0.1).toFixed(1) + "(m)";
+            console.log((num * 0.1).toFixed(1) + "(m)");
         }, 1000)
     }
     function btnOff_click() {
@@ -137,7 +138,7 @@
     }
     const stopRaiserGame = () => {
         isWorking = false;
-        msgElement.innerText = "운동거리: " + num * 24 * (1 / 3600) + "(km)";
+        msgElement.innerText = "운동거리: " + (num * 0.1).toFixed(1) + "(m)";
         modalElement.innerHTML = "기계를 종료하세요."
         clearInterval(distance);
     }
@@ -149,6 +150,17 @@
         .body {
             overflow: hidden;
         }
+    }
+    #home-center{
+        height: 300px;
+    }
+    .laser-btn{
+        background-color: white;
+        border:1px solid #435ebe !important;
+        font-size:40px;
+        height: 100px;
+        margin: 20px;
+        border-radius: 1rem;
     }
 </style>
 
